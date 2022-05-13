@@ -1,0 +1,43 @@
+package TicketBook;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Calender {
+
+	static WebDriver driver = null;
+	
+	public static void main(String[] args) {
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.redbus.in/");
+		driver.manage().window().maximize();
+		
+		driver.findElement(By.id("onward_cal")).click();
+		
+		
+	selectDate ("12", "Apr", "2022"); 
+	
+		public static String[] getMonthYear(String monthYear) {
+			return monthYear.split(" ");
+			
+		}
+		
+		 public static void selectDate (String exDay, String exMonth, String exYear) {
+			 String monthYear = driver.findElement(By.className("monthTitle")).getText(); 
+			 System.out.println(monthYear);
+		 
+		 while (!(getMonthYear(monthYear)[0].equals(exMonth)) && getMonthYear(monthYear)[1].equals(exYear))
+		{
+			 
+		 }
+				 
+		 
+		
+
+	}
+
+}
